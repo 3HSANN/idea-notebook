@@ -9,6 +9,7 @@
 Usage:  python build.py        (needs: pip install markdown)
 Output: dist/
 """
+import hashlib
 import json
 import re
 import shutil
@@ -121,6 +122,11 @@ def main():
     payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     page = (TEMPLATES / "desktop.html").read_text(encoding="utf-8")
     page = page.replace("__SITE__", SITE_NAME.replace("&", "&amp;").replace("<", "&lt;")).replace("__DATA__", payload)
+    # Version the CSS and JS links so browsers never mix a new page with old cached files.
+    def version(name):
+        return hashlib.sha1((DIST / name).read_bytes()).hexdigest()[:10]
+
+    page = page.replace("__CSSV__", version("style.css")).replace("__JSV__", version("app.js"))
     (DIST / "index.html").write_text(page, encoding="utf-8")
     print(f"Built {len(data['ideas'])} ideas and {len(data['ui'])} UI screenshots into {DIST}")
 

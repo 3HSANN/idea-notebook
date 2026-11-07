@@ -1,9 +1,11 @@
 # Idea Notebook
 
-A plain website for project ideas, plus a gallery of UI screenshots you like. Everything is a file in this repo, and GitHub rebuilds the site on every push.
+A website that looks like a retro desktop. Your project ideas and UI screenshots live in two folders on the desktop. Double-click a folder to open it in a window, double-click an idea to read it, double-click a screenshot to view it. On a phone, a single tap opens things and windows fill the screen.
 
-- **Ideas**: one Markdown file per idea in `ideas/`. The home page lists them with search, tag filters, a status label and a roadmap progress bar. Each idea gets its own page.
-- **UI inspiration**: images in `ui/`. The gallery page shows them in a grid, with tag filters, search and a full-size viewer.
+Everything is a file in this repo, and GitHub rebuilds the site on every push.
+
+- **Ideas** folder: one Markdown file per idea in `ideas/`. Each idea shows its status and roadmap progress. The folder window has search and tag filters.
+- **UI Inspiration** folder: images in `ui/`, shown as thumbnails with search and tag filters. Opening one shows the full image with your notes.
 
 ## Add an idea
 
@@ -11,8 +13,6 @@ A plain website for project ideas, plus a gallery of UI screenshots you like. Ev
 2. Fill in the title, summary, tags and status, then write the sections
 3. Tick roadmap steps as you go by changing `- [ ]` to `- [x]`
 4. Commit and push
-
-The eight ideas that come with the repo are samples. Delete or replace them.
 
 ## Add UI screenshots
 
@@ -37,12 +37,11 @@ The password field shows its rules before you type, not after you fail.
 
 ## Put it online (GitHub Pages)
 
-1. Create a repository on GitHub and push this folder to the `main` branch
-2. Open Settings, then Pages, and set Source to **GitHub Actions**
-3. Push any change, or run "Deploy site" from the Actions tab
-4. The site appears at `https://<your-username>.github.io/<repo-name>/`
+1. Open Settings, then Pages, and set Source to **GitHub Actions**
+2. Open the Actions tab, pick "Deploy site", and run it (it also runs on every push)
+3. The site appears at `https://<your-username>.github.io/<repo-name>/`
 
-Free accounts need a public repository for Pages. If you want the ideas private, keep the repo private and run the site locally instead.
+Free accounts need a public repository for Pages.
 
 ## Run it locally
 
@@ -57,6 +56,11 @@ Then open http://localhost:8000.
 ## Settings
 
 - Site name: change `SITE_NAME` at the top of `build.py`
+- Wallpaper: replace `static/wallpaper.jpg` with any image
 - Idea front matter: `title`, `summary`, `tags: [A, B]`, `status` (`seed`, `planned`, `building`, `done`)
 - Screenshot front matter: `title`, `tags`, `source` (a link)
 - Files starting with `_` are ignored
+
+## Links to a window
+
+The address updates as you open things, so you can share a link that opens straight to one window: `#ideas`, `#ui`, `#idea/<file-name-without-.md>` or `#shot/<image-file-name>`.

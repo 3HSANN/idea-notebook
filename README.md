@@ -39,7 +39,7 @@ The password field shows its rules before you type, not after you fail.
 
 1. Open Settings, then Pages, and set Source to **GitHub Actions**
 2. Open the Actions tab, pick "Deploy site", and run it (it also runs on every push)
-3. The site appears at `https://<your-username>.github.io/<repo-name>/`
+3. The site appears at `https://3hsann.github.io/idea-notebook`
 
 Free accounts need a public repository for Pages.
 

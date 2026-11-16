@@ -58,9 +58,10 @@ footer a{color:#FF8F87}
 <main>
 <div class="brand">NIT <span>×</span> Red Hat</div>
 
-<div class="kicker">You're registered</div>
-<h1>Tell your network about <em>The Open Future.</em></h1>
-<p class="lead">Type your name to make your own "I'm attending" banner, then share it on LinkedIn.</p>
+<div class="kicker" id="kicker">Red Hat Academy Day · AUS</div>
+<h1 id="headline">Join us at <em>The Open Future.</em></h1>
+<p class="lead" id="lead">Wed, Nov 18 · 4–6 PM · Auditorium EB1-0001, American University of Sharjah.</p>
+<div class="row" id="registerRow" style="margin:0 0 28px"><a class="btn primary" href="register/">Register now</a></div>
 
 <div class="preview"><canvas id="c" width="2400" height="1254" role="img" aria-label="Your personalised I'm attending banner"></canvas></div>
 
@@ -92,14 +93,15 @@ footer a{color:#FF8F87}
 The Open Future · Red Hat Academy Day<br>
 Wed, Nov 18, 2026 · 4–6 PM · Auditorium EB1-0001<br>
 American University of Sharjah<br>
-Not registered yet? <a href="https://docs.google.com/forms/d/e/1FAIpQLSfg8DM-PyN-k5XXdf4fC391U05FJNCB3QnEguq8c90MHfIC1Q/viewform">Register here</a>
+Not registered yet? <a href="register/">Register here</a>
 </footer>
 </main>
 
 <script>
 (function(){
   var PAGE = 'https://3hsann.github.io/idea-notebook/the-open-future/';
-  var FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSfg8DM-PyN-k5XXdf4fC391U05FJNCB3QnEguq8c90MHfIC1Q/viewform';
+  var FORM = PAGE + 'register/';
+  var params = new URLSearchParams(location.search);
   var c = document.getElementById('c'), ctx = c.getContext('2d');
   var input = document.getElementById('name');
   var status = document.getElementById('status');
@@ -177,6 +179,13 @@ Not registered yet? <a href="https://docs.google.com/forms/d/e/1FAIpQLSfg8DM-PyN
       .catch(function(){ ta.select(); document.execCommand('copy'); status.textContent = 'Caption copied.'; });
   });
 
+  if (params.get('name')) input.value = params.get('name').slice(0, 32);
+  if (params.get('registered') === '1') {
+    document.getElementById('kicker').textContent = 'You\u2019re registered \u2014 see you there';
+    document.getElementById('headline').innerHTML = 'Tell your network about <em>The Open Future.</em>';
+    document.getElementById('lead').textContent = 'Your banner is ready below. Download it or share it straight to LinkedIn.';
+    document.getElementById('registerRow').hidden = true;
+  }
   input.addEventListener('input', draw);
   var ready = (document.fonts && document.fonts.load) ? document.fonts.load('34px "Fira Mono"') : Promise.resolve();
   base.onload = function(){ ready.then(draw, draw); };

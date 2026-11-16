@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register · The Open Future at AUS</title>
+<meta name="description" content="Register for Red Hat Academy Day at the American University of Sharjah, hosted by NIT Club × Red Hat. Wed, Nov 18, 4–6 PM, Auditorium EB1-0001.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://3hsann.github.io/idea-notebook/the-open-future/register/">
+<meta property="og:title" content="Register for The Open Future at AUS">
+<meta property="og:description" content="Red Hat Academy Day, hosted by NIT Club × Red Hat. Wed, Nov 18 · 4–6 PM · Auditorium EB1-0001, American University of Sharjah.">
+<meta property="og:image" content="https://3hsann.github.io/idea-notebook/the-open-future/banner.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../hat.png">
+<style>
+@font-face{font-family:'Red Hat Display';src:url(../fonts/red-hat-display-latin-400-normal.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Red Hat Display';src:url(../fonts/red-hat-display-latin-500-normal.woff2) format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Red Hat Display';src:url(../fonts/red-hat-display-latin-700-normal.woff2) format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Red Hat Display';src:url(../fonts/red-hat-display-latin-900-normal.woff2) format('woff2');font-weight:900;font-display:swap}
+@font-face{font-family:'Fira Mono';src:url(../fonts/fira-mono-latin-400-normal.woff2) format('woff2');font-weight:400;font-display:swap}
+*{box-sizing:border-box}
+body{margin:0;background:#08080B;color:#FFFFFF;font-family:'Red Hat Display',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:620px;margin:0 auto;padding:40px 20px 64px}
+.brand{font-weight:700;font-size:18px}
+.brand span{color:#71717A;font-weight:400}
+.hero{position:relative;margin:24px -20px 0;height:200px;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 45% 55% at 50% 60%,rgba(238,0,0,0.35),rgba(238,0,0,0) 70%)}
+.hero img{position:absolute;left:50%;top:50%;width:min(380px,80%);transform:translate(-50%,-45%)}
+.kicker{font-family:'Fira Mono',monospace;color:#FF8F87;font-size:15px;margin:12px 0 10px}
+h1{font-size:clamp(40px,9vw,60px);font-weight:900;letter-spacing:-0.045em;line-height:0.92;margin:0 0 16px}
+h1 em{font-style:normal;background:linear-gradient(120deg,#E5534B,#C81E2B 50%,#8E0F1C);-webkit-background-clip:text;background-clip:text;color:transparent}
+.meta{font-family:'Fira Mono',monospace;font-size:15px;color:#D4D4D8;line-height:1.8;margin:0 0 28px}
+form{display:grid;gap:18px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:460px){.two{grid-template-columns:1fr}}
+label{display:block;font-family:'Fira Mono',monospace;font-size:14px;color:#A1A1AA;margin-bottom:8px}
+label b{color:#FF8F87;font-weight:400}
+input{width:100%;font:inherit;font-size:18px;color:#fff;background:#141418;border:1px solid rgba(255,255,255,0.18);border-radius:10px;padding:14px 16px;min-height:52px}
+input:focus{outline:2px solid #FF6B63;outline-offset:1px;border-color:transparent}
+input[aria-invalid=true]{border-color:#FF6B63}
+.err{font-family:'Fira Mono',monospace;font-size:13px;color:#FF8F87;margin-top:6px;min-height:0}
+button{font:inherit;font-size:18px;font-weight:700;border-radius:10px;padding:16px 20px;min-height:56px;cursor:pointer;border:0;background:#E5342B;color:#fff;margin-top:6px}
+button:hover{background:#C81E2B}
+button:disabled{opacity:.6;cursor:progress}
+.note{font-size:14px;color:#A1A1AA;line-height:1.5;margin:4px 0 0}
+.note a{color:#FF8F87}
+.formerr{font-family:'Fira Mono',monospace;font-size:14px;color:#FF8F87;line-height:1.5}
+</style>
+</head>
+<body>
+<main>
+<div class="brand">NIT <span>×</span> Red Hat</div>
+<div class="hero" aria-hidden="true"><img src="../hat.png" alt=""></div>
+
+<div class="kicker">Red Hat Academy Day · AUS</div>
+<h1>The <em>Open</em> Future.</h1>
+<p class="meta">Wed, Nov 18, 2026 · 4–6 PM<br>Auditorium EB1-0001 · American University of Sharjah</p>
+
+<form id="reg" novalidate>
+<div class="two">
+<div><label for="first">First Name <b>*</b></label><input id="first" name="first" autocomplete="given-name" required maxlength="40"><div class="err" id="first-err"></div></div>
+<div><label for="last">Last Name <b>*</b></label><input id="last" name="last" autocomplete="family-name" required maxlength="40"><div class="err" id="last-err"></div></div>
+</div>
+<div><label for="ausid">AUS ID <b>*</b></label><input id="ausid" name="ausid" required maxlength="20" autocapitalize="characters" spellcheck="false"><div class="err" id="ausid-err"></div></div>
+<div><label for="email">Email <b>*</b></label><input id="email" name="email" type="email" autocomplete="email" required maxlength="80" spellcheck="false"><div class="err" id="email-err"></div></div>
+<div><label for="phone">Phone Number <b>*</b></label><input id="phone" name="phone" type="tel" autocomplete="tel" required maxlength="20" placeholder="+971 5X XXX XXXX"><div class="err" id="phone-err"></div></div>
+<button id="submit" type="submit">Register &amp; get my banner</button>
+<div class="formerr" id="formerr" role="alert"></div>
+<p class="note">Your details go to the NIT Club's registration form. Trouble with this page? <a href="https://docs.google.com/forms/d/e/1FAIpQLSfg8DM-PyN-k5XXdf4fC391U05FJNCB3QnEguq8c90MHfIC1Q/viewform">Use the Google Form instead</a>.</p>
+</form>
+</main>
+
+<script>
+(function(){
+  var ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSfg8DM-PyN-k5XXdf4fC391U05FJNCB3QnEguq8c90MHfIC1Q/formResponse';
+  var FIELDS = {
+    first: 'entry.485804903',
+    last:  'entry.388894531',
+    ausid: 'entry.1443320983',
+    email: 'entry.1723859695',
+    phone: 'entry.769872290'
+  };
+  var rules = {
+    first: function(v){ return v ? '' : 'Please enter your first name'; },
+    last:  function(v){ return v ? '' : 'Please enter your last name'; },
+    ausid: function(v){ return !v ? 'Please enter your AUS ID' : (/^[A-Za-z0-9-]{4,20}$/.test(v) ? '' : 'Letters and numbers only'); },
+    email: function(v){ return !v ? 'Please enter your email' : (/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : 'Please enter a valid email address'); },
+    phone: function(v){ var d = v.replace(/[\s()+-]/g,''); return !v ? 'Please enter your phone number' : (/^\d{7,15}$/.test(d) ? '' : 'Please enter a valid phone number'); }
+  };
+  var form = document.getElementById('reg'), btn = document.getElementById('submit'), formerr = document.getElementById('formerr');
+
+  function check(id){
+    var el = document.getElementById(id), msg = rules[id](el.value.trim());
+    document.getElementById(id + '-err').textContent = msg;
+    el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    if (msg) el.setAttribute('aria-describedby', id + '-err'); else el.removeAttribute('aria-describedby');
+    return !msg;
+  }
+  Object.keys(rules).forEach(function(id){
+    document.getElementById(id).addEventListener('blur', function(){ if (this.value) check(id); });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    formerr.textContent = '';
+    var bad = Object.keys(rules).filter(function(id){ return !check(id); });
+    if (bad.length) { document.getElementById(bad[0]).focus(); return; }
+    var body = new URLSearchParams();
+    Object.keys(FIELDS).forEach(function(id){ body.append(FIELDS[id], document.getElementById(id).value.trim()); });
+    btn.disabled = true; btn.textContent = 'Registering…';
+    fetch(ACTION, { method: 'POST', mode: 'no-cors', body: body })
+      .then(function(){
+        var name = document.getElementById('first').value.trim() + ' ' + document.getElementById('last').value.trim();
+        location.href = '../?registered=1&name=' + encodeURIComponent(name);
+      })
+      .catch(function(){
+        btn.disabled = false; btn.textContent = 'Register & get my banner';
+        formerr.textContent = 'Couldn’t reach the registration form. Check your connection and try again, or use the Google Form link below.';
+      });
+  });
+})();
+</script>
+</body>
+</html>

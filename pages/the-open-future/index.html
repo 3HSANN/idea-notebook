@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I'm attending The Open Future at AUS</title>
+<meta name="description" content="Red Hat Academy Day at the American University of Sharjah, hosted by NIT Club × Red Hat. Wed, Nov 18, 4–6 PM, Auditorium EB1-0001.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://3hsann.github.io/idea-notebook/the-open-future/">
+<meta property="og:title" content="I'm attending The Open Future at AUS">
+<meta property="og:description" content="Red Hat Academy Day, hosted by NIT Club × Red Hat. Wed, Nov 18 · 4–6 PM · Auditorium EB1-0001, American University of Sharjah.">
+<meta property="og:image" content="https://3hsann.github.io/idea-notebook/the-open-future/banner.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta property="og:image:alt" content="The Open Future — I'm attending banner with a red fedora">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://3hsann.github.io/idea-notebook/the-open-future/banner.png">
+<link rel="icon" href="hat.png">
+<style>
+@font-face{font-family:'Red Hat Display';src:url(fonts/red-hat-display-latin-400-normal.woff2) format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Red Hat Display';src:url(fonts/red-hat-display-latin-500-normal.woff2) format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Red Hat Display';src:url(fonts/red-hat-display-latin-700-normal.woff2) format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'Red Hat Display';src:url(fonts/red-hat-display-latin-900-normal.woff2) format('woff2');font-weight:900;font-display:swap}
+@font-face{font-family:'Fira Mono';src:url(fonts/fira-mono-latin-400-normal.woff2) format('woff2');font-weight:400;font-display:swap}
+*{box-sizing:border-box}
+body{margin:0;background:#08080B;color:#FFFFFF;font-family:'Red Hat Display',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:760px;margin:0 auto;padding:40px 20px 64px}
+.brand{font-weight:700;font-size:18px;display:flex;gap:8px;align-items:center}
+.brand span{color:#71717A;font-weight:400}
+.kicker{font-family:'Fira Mono',monospace;color:#FF8F87;font-size:15px;margin:40px 0 10px}
+h1{font-size:clamp(36px,7vw,56px);font-weight:900;letter-spacing:-0.04em;line-height:0.95;margin:0 0 14px}
+h1 em{font-style:normal;background:linear-gradient(120deg,#E5534B,#C81E2B 50%,#8E0F1C);-webkit-background-clip:text;background-clip:text;color:transparent}
+p.lead{color:#D4D4D8;font-size:18px;line-height:1.5;margin:0 0 28px}
+.preview{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);box-shadow:0 20px 80px rgba(238,0,0,0.18)}
+canvas{display:block;width:100%;height:auto}
+label{display:block;font-family:'Fira Mono',monospace;font-size:14px;color:#A1A1AA;margin:28px 0 8px}
+input[type=text]{width:100%;font:inherit;font-size:18px;color:#fff;background:#141418;border:1px solid rgba(255,255,255,0.18);border-radius:10px;padding:14px 16px;min-height:52px}
+input[type=text]:focus{outline:2px solid #FF6B63;outline-offset:1px;border-color:transparent}
+.row{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+button,.btn{font:inherit;font-size:17px;font-weight:700;border-radius:10px;padding:14px 20px;min-height:52px;cursor:pointer;display:inline-flex;align-items:center;gap:10px;text-decoration:none;border:1px solid transparent}
+.primary{background:#E5342B;color:#fff}
+.primary:hover{background:#C81E2B}
+.linkedin{background:#0A66C2;color:#fff}
+.linkedin:hover{background:#004182}
+.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,0.25)}
+.ghost:hover{border-color:#fff}
+.steps{margin:40px 0 0;padding:24px;border:1px solid rgba(255,255,255,0.12);border-radius:14px;background:#0F0F13}
+.steps h2{font-size:20px;margin:0 0 12px}
+.steps ol{margin:0;padding-left:22px;color:#D4D4D8;line-height:1.7;font-size:16px}
+textarea{width:100%;font-family:'Fira Mono',monospace;font-size:14px;line-height:1.5;color:#E4E4E7;background:#141418;border:1px solid rgba(255,255,255,0.18);border-radius:10px;padding:14px;min-height:150px;resize:vertical}
+.status{font-family:'Fira Mono',monospace;font-size:14px;color:#8BE38B;min-height:20px;margin-top:10px}
+footer{margin-top:48px;font-family:'Fira Mono',monospace;font-size:14px;color:#A1A1AA;line-height:1.7}
+footer a{color:#FF8F87}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<main>
+<div class="brand">NIT <span>×</span> Red Hat</div>
+
+<div class="kicker">You're registered</div>
+<h1>Tell your network about <em>The Open Future.</em></h1>
+<p class="lead">Type your name to make your own "I'm attending" banner, then share it on LinkedIn.</p>
+
+<div class="preview"><canvas id="c" width="2400" height="1254" role="img" aria-label="Your personalised I'm attending banner"></canvas></div>
+
+<label for="name">Your name</label>
+<input id="name" type="text" maxlength="32" placeholder="e.g. Mohammed Ehsan" autocomplete="name">
+
+<div class="row">
+<button class="primary" id="download" type="button">Download my banner</button>
+<button class="linkedin" id="shareFile" type="button" hidden>Share banner to LinkedIn app</button>
+<a class="btn ghost" id="shareLink" target="_blank" rel="noopener">Quick share link on LinkedIn</a>
+</div>
+<div class="status" id="status" role="status"></div>
+
+<div class="steps">
+<h2>Post it in 3 steps</h2>
+<ol>
+<li>Type your name above and tap <strong>Download my banner</strong> (on a phone you can tap <strong>Share banner to LinkedIn app</strong> instead).</li>
+<li>Copy the caption below.</li>
+<li>On LinkedIn, start a post, add your banner image, paste the caption and post. Tag NIT Club and Red Hat.</li>
+</ol>
+<p style="color:#A1A1AA;font-size:15px;line-height:1.5;margin:14px 0 0">In a hurry? <strong>Quick share link</strong> posts the event banner as a link preview in one tap — just without your name on it.</p>
+</div>
+
+<label for="caption">Caption</label>
+<textarea id="caption" readonly></textarea>
+<div class="row"><button class="ghost" id="copy" type="button">Copy caption</button></div>
+
+<footer>
+The Open Future · Red Hat Academy Day<br>
+Wed, Nov 18, 2026 · 4–6 PM · Auditorium EB1-0001<br>
+American University of Sharjah<br>
+Not registered yet? <a href="https://docs.google.com/forms/d/e/1FAIpQLSfg8DM-PyN-k5XXdf4fC391U05FJNCB3QnEguq8c90MHfIC1Q/viewform">Register here</a>
+</footer>
+</main>
+
+<script>
+(function(){
+  var PAGE = 'https://3hsann.github.io/idea-notebook/the-open-future/';
+  var FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSfg8DM-PyN-k5XXdf4fC391U05FJNCB3QnEguq8c90MHfIC1Q/viewform';
+  var c = document.getElementById('c'), ctx = c.getContext('2d');
+  var input = document.getElementById('name');
+  var status = document.getElementById('status');
+  var base = new Image();
+  base.src = 'banner-base@2x.png';
+
+  function pillText(){
+    var n = input.value.trim().replace(/\s+/g,' ');
+    return n ? n + ' is attending' : "I'm attending";
+  }
+  function roundRect(x,y,w,h,r){
+    ctx.beginPath();
+    ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y); ctx.arc(x+w-r,y+r,r,-Math.PI/2,0);
+    ctx.lineTo(x+w,y+h-r); ctx.arc(x+w-r,y+h-r,r,0,Math.PI/2);
+    ctx.lineTo(x+r,y+h); ctx.arc(x+r,y+h-r,r,Math.PI/2,Math.PI);
+    ctx.lineTo(x,y+r); ctx.arc(x+r,y+r,r,Math.PI,1.5*Math.PI); ctx.closePath();
+  }
+  function draw(){
+    if(!base.complete || !base.naturalWidth) return;
+    ctx.clearRect(0,0,c.width,c.height);
+    ctx.drawImage(base,0,0,c.width,c.height);
+    var t = pillText();
+    ctx.font = '34px "Fira Mono", monospace';
+    var w = ctx.measureText(t).width + 72, h = 78, x = 128, y = 300;
+    roundRect(x+1.5,y+1.5,w-3,h-3,(h-3)/2);
+    ctx.lineWidth = 3; ctx.strokeStyle = 'rgba(255,107,99,0.6)'; ctx.stroke();
+    ctx.fillStyle = '#FF8F87'; ctx.textBaseline = 'middle';
+    ctx.fillText(t, x+36, y+h/2+1);
+    updateCaption();
+  }
+  function updateCaption(){
+    var n = input.value.trim();
+    document.getElementById('caption').value =
+      "I'm attending The Open Future, Red Hat Academy Day at the American University of Sharjah, hosted by NIT Club × Red Hat.\n\n" +
+      "Wed, Nov 18 · 4–6 PM · Auditorium EB1-0001\n" +
+      "On the agenda: open source & innovation, AI, infrastructure, sovereign cloud, RHEL and Red Hat Academy.\n\n" +
+      "Want to join? Register here: " + FORM + "\n\n#RedHat #OpenSource #AUS #NITClub";
+  }
+  function fileName(){
+    var n = input.value.trim().replace(/[^\w\- ]+/g,'').replace(/\s+/g,'-');
+    return 'the-open-future' + (n ? '-' + n : '') + '.png';
+  }
+  function toBlob(){ return new Promise(function(res){ c.toBlob(res,'image/png'); }); }
+
+  document.getElementById('download').addEventListener('click', function(){
+    toBlob().then(function(b){
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(b); a.download = fileName();
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+      status.textContent = 'Banner downloaded. Next: copy the caption and post on LinkedIn.';
+    });
+  });
+
+  var shareBtn = document.getElementById('shareFile');
+  try {
+    var probe = new File([new Blob(['x'],{type:'image/png'})],'x.png',{type:'image/png'});
+    if (navigator.canShare && navigator.canShare({files:[probe]})) shareBtn.hidden = false;
+  } catch(e) {}
+  shareBtn.addEventListener('click', function(){
+    toBlob().then(function(b){
+      var f = new File([b], fileName(), {type:'image/png'});
+      return navigator.share({files:[f], text: document.getElementById('caption').value});
+    }).then(function(){ status.textContent = 'Shared. Pick LinkedIn in the share sheet if you haven’t.'; })
+      .catch(function(){});
+  });
+
+  document.getElementById('shareLink').href =
+    'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(PAGE);
+
+  document.getElementById('copy').addEventListener('click', function(){
+    var ta = document.getElementById('caption');
+    (navigator.clipboard ? navigator.clipboard.writeText(ta.value) : Promise.reject())
+      .then(function(){ status.textContent = 'Caption copied.'; })
+      .catch(function(){ ta.select(); document.execCommand('copy'); status.textContent = 'Caption copied.'; });
+  });
+
+  input.addEventListener('input', draw);
+  var ready = (document.fonts && document.fonts.load) ? document.fonts.load('34px "Fira Mono"') : Promise.resolve();
+  base.onload = function(){ ready.then(draw, draw); };
+  if (base.complete) ready.then(draw, draw);
+  updateCaption();
+})();
+</script>
+</body>
+</html>

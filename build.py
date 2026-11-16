@@ -5,6 +5,7 @@
     ui/*.png|jpg..  screenshots of UI designs you like
     ui/<name>.md    optional notes for the screenshot with the same name
     static/         wallpaper.jpg, style.css, app.js (copied as-is)
+    pages/<name>/   standalone pages, served at /<name>/ (copied as-is)
 
 Usage:  python build.py        (needs: pip install markdown)
 Output: dist/
@@ -117,6 +118,12 @@ def main():
     for f in STATIC.iterdir():
         if f.is_file():
             shutil.copy2(f, DIST / f.name)
+    # Standalone pages copied as-is: pages/<name>/ is served at /<name>/
+    pages = ROOT / "pages"
+    if pages.exists():
+        for d in pages.iterdir():
+            if d.is_dir():
+                shutil.copytree(d, DIST / d.name)
 
     data = {"site": SITE_NAME, "ideas": collect_ideas(), "ui": collect_ui()}
     payload = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
